@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Application architecture
+
+- Keep the public finance website as file-based content routes with a shared root site shell; this preserves direct navigation and consistent branding across every page.
