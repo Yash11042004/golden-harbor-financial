@@ -92,7 +92,7 @@ export function HomePage() {
             <p className="mt-6 max-w-lg text-base leading-7 text-primary-foreground/85 sm:text-lg">Thoughtful loan and insurance assistance, with options from a network of banks, NBFCs and insurance providers.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" variant="gold"><Link to="/apply">Start an enquiry <ArrowUpRight aria-hidden="true" /></Link></Button>
-              <Button asChild className="border-primary-foreground/45 text-primary-foreground hover:bg-primary-foreground/10" size="lg" variant="outline"><Link to="/loan-services">Explore loan options <ArrowRight aria-hidden="true" /></Link></Button>
+              <Button asChild className="border-primary-foreground/45 bg-transparent text-primary-foreground hover:bg-primary-foreground/10" size="lg" variant="outline"><Link to="/loan-services">Explore loan options <ArrowRight aria-hidden="true" /></Link></Button>
             </div>
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-primary-foreground/25 pt-5 text-sm text-primary-foreground/75">
               <span className="inline-flex items-center gap-2"><Check aria-hidden="true" className="size-4 text-accent" /> Multiple provider tie-ups</span>
@@ -209,6 +209,7 @@ function ApplyPage() {
 
 export function ContentPage({ page }: { page: keyof typeof pageCopy }) {
   const config = pageCopy[page];
+  if (!config) return null;
   let body;
   switch (page) {
     case "about": body = <AboutPage/>; break;
